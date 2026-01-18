@@ -26,42 +26,63 @@ export const viewport: Viewport = {
   maximumScale: 5, // Accessibility best practice (don't block zooming)
 };
 
-// 3. METADATA: The SEO Powerhouse
+// 3. METADATA: The SEO Powerhouse for #1 Google Ranking
 export const metadata: Metadata = {
-  metadataBase: new URL('https://devsphere.agency'), // Must match your real domain
+  metadataBase: new URL('https://devsphere-red.vercel.app'),
 
-  // TITLE: Perfectly matches your H1 & H3 for keyword consistency
+  // TITLE: Optimized for "DevSphere", "mobile development agency", "web development agency"
   title: {
-    default: 'DevSphere — Web & Mobile App Development Agency | Revenue-Generating Platforms',
-    template: '%s | DevSphere Digital Agency',
+    default: 'DevSphere — #1 Web & Mobile Development Agency | Custom App Development',
+    template: '%s | DevSphere',
   },
 
-  // DESCRIPTION: The "Sales Pitch" in Google Results. 
-  // Targets: "Funded Startups", "Revenue", "Full-Stack", "Founder Name"
-  description: 'DevSphere helps funded startups & enterprises build fast, secure, and revenue-generating web & mobile apps. Expert Full-Stack Development, UI/UX Design, & SEO strategies by Rajan Prasaila Yadav.',
+  // DESCRIPTION: Keyword-rich for top ranking
+  description: 'DevSphere is a leading web development agency and mobile app development company. We build custom web applications, mobile apps, and enterprise software for startups and businesses worldwide. Expert React, Next.js, React Native development by Rajan Prasaila Yadav.',
 
-  // KEYWORDS: Expanded to cover "SEO Expert" and specific tech stacks
+  // KEYWORDS: Comprehensive for all target searches
   keywords: [
-    'Web Development Agency',
-    'Mobile App Development',
-    'React Native Experts',
-    'Next.js Developers',
-    'UI/UX Design Services',
-    'Enterprise Software Solutions',
-    'SEO Expert Consultancy',
-    'Rajan Prasaila Yadav', // Personal Branding
-    'Custom Software Engineering',
-    'Startup Tech Partner'
+    // Primary Keywords
+    'DevSphere',
+    'web development agency',
+    'mobile development agency',
+    'mobile app development company',
+    'custom app development',
+
+    // Service Keywords
+    'web application development',
+    'mobile app development',
+    'React Native development',
+    'Next.js development',
+    'full-stack development',
+    'UI/UX design agency',
+    'enterprise software development',
+    'custom software development',
+
+    // Technology Keywords
+    'React development agency',
+    'Node.js development',
+    'TypeScript development',
+    'Progressive Web Apps',
+    'cross-platform mobile apps',
+
+    // Location & Branding
+    'Rajan Prasaila Yadav',
+    'DevSphere agency',
+    'startup development partner',
+    'scalable web solutions',
+    'SEO-optimized development',
   ],
 
-  authors: [{ name: 'Rajan Prasaila Yadav', url: 'https://devsphere.agency/about' }],
+  authors: [{ name: 'Rajan Prasaila Yadav', url: 'https://devsphere-red.vercel.app/about' }],
   creator: 'DevSphere Digital Agency',
   publisher: 'DevSphere',
+  category: 'Technology',
 
-  // ROBOTS: Explicit command to index everything
+  // ROBOTS: Explicit command to index everything + AI bots
   robots: {
     index: true,
     follow: true,
+    nocache: false,
     googleBot: {
       index: true,
       follow: true,
@@ -74,6 +95,13 @@ export const metadata: Metadata = {
   // CANONICAL: Protects against duplicate content
   alternates: {
     canonical: '/',
+  },
+
+  // VERIFICATION: Add your verification codes
+  verification: {
+    google: 'your-google-verification-code', // Add from Google Search Console
+    // yandex: 'your-yandex-code',
+    // bing: 'your-bing-code',
   },
 
   // ICONS: Perfect
@@ -91,20 +119,20 @@ export const metadata: Metadata = {
     ],
   },
 
-  // OPEN GRAPH: For LinkedIn/Facebook/WhatsApp sharing
+  // OPEN GRAPH: For social sharing
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: 'https://devsphere.agency',
+    url: 'https://devsphere-red.vercel.app',
     siteName: 'DevSphere',
-    title: 'DevSphere — High-Performance Web & Mobile App Agency',
-    description: 'We build revenue-generating digital platforms for startups and enterprises. Founded by Rajan Prasaila Yadav.',
+    title: 'DevSphere — #1 Web & Mobile Development Agency',
+    description: 'Leading web development agency and mobile app development company. Custom React, Next.js, and React Native development for startups and enterprises.',
     images: [
       {
         url: '/Image/Logo/logo-devsphere-social.png',
         width: 1200,
         height: 630,
-        alt: 'DevSphere - Building Revenue-Generating Platforms',
+        alt: 'DevSphere - Web & Mobile Development Agency',
       },
     ],
   },
@@ -112,10 +140,10 @@ export const metadata: Metadata = {
   // TWITTER CARD: Large image for maximum visibility
   twitter: {
     card: 'summary_large_image',
-    title: 'DevSphere — Web & Mobile App Development Agency',
-    description: 'We help startups build scalable, revenue-generating digital products.',
+    title: 'DevSphere — Web & Mobile Development Agency',
+    description: 'Expert web and mobile app development. React, Next.js, React Native specialists.',
     images: ['/Image/Logo/logo-devsphere-social.png'],
-    creator: '@yourtwitterhandle', // Add this if you have one
+    creator: '@devsphere', // Add your Twitter handle
   },
 };
 
@@ -125,35 +153,101 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  // 4. JSON-LD SCHEMA: This communicates directly with Google's Knowledge Graph
+  // 4. ENHANCED JSON-LD SCHEMA: For Google Knowledge Graph & AI Bots
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
+    '@id': 'https://devsphere-red.vercel.app/#organization',
     name: 'DevSphere',
-    url: 'https://devsphere.agency',
-    logo: 'https://devsphere.agency/Image/Logo/logo-devsphere-social.png',
+    alternateName: 'DevSphere Digital Agency',
+    url: 'https://devsphere-red.vercel.app',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://devsphere-red.vercel.app/Image/Logo/logo-devsphere-social.png',
+      width: 1200,
+      height: 630,
+    },
+    description: 'Leading web development agency and mobile app development company specializing in custom React, Next.js, and React Native development for startups and enterprises worldwide.',
+
+    // Founder Information
     founder: {
       '@type': 'Person',
       name: 'Rajan Prasaila Yadav',
-      jobTitle: 'Full-Stack Architect & Digital Product Strategist'
+      jobTitle: 'Full-Stack Architect & Founder',
+      url: 'https://devsphere-red.vercel.app/about',
     },
-    description: 'DevSphere is a full-service web and mobile app development agency specializing in high-performance digital platforms.',
+
+    // Service Offerings (Critical for ranking)
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Development Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Web Development',
+            description: 'Custom web application development using React, Next.js, and modern frameworks',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Mobile App Development',
+            description: 'Cross-platform mobile app development using React Native',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'UI/UX Design',
+            description: 'User interface and user experience design for web and mobile applications',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Full-Stack Development',
+            description: 'End-to-end software development from frontend to backend',
+          },
+        },
+      ],
+    },
+
+    // Keywords for AI bots
+    keywords: 'web development agency, mobile development agency, mobile app development company, React development, Next.js development, React Native development, custom app development, DevSphere',
+
+    // Contact Information
     address: {
       '@type': 'PostalAddress',
-      addressCountry: 'IN', // Assuming India based on context, change if needed
-      addressLocality: 'Global Service'
+      addressCountry: 'Global',
+      addressLocality: 'Worldwide Service',
     },
+
+    // Social Media
     sameAs: [
-      'https://www.linkedin.com/in/rajan-prasaila-yadav', // Replace with actual links
+      'https://www.linkedin.com/company/devsphere',
       'https://twitter.com/devsphere',
-      'https://github.com/devsphere'
+      'https://github.com/devsphere',
     ],
+
+    // Contact Point
     contactPoint: {
       '@type': 'ContactPoint',
-      telephone: '+91-XXXXXXXXXX', // Add your business number
       contactType: 'customer service',
-      areaServed: 'World'
-    }
+      areaServed: 'Worldwide',
+      availableLanguage: ['English'],
+    },
+
+    // Aggregate Rating (add when you have reviews)
+    // aggregateRating: {
+    //   '@type': 'AggregateRating',
+    //   ratingValue: '5.0',
+    //   reviewCount: '50',
+    // },
   };
 
   return (

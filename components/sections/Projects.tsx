@@ -60,7 +60,7 @@ export default function Projects() {
                                     {project.tech.map((tech, i) => (
                                         <span
                                             key={i}
-                                            className="px-3 py-1 bg-skin/15 text-skin rounded-full text-sm font-semibold"
+                                            className="px-3 py-1 bg-skin/20 text-skin rounded-full text-sm font-semibold"
                                         >
                                             {tech}
                                         </span>

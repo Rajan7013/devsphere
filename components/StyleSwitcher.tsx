@@ -69,13 +69,14 @@ export default function StyleSwitcher() {
             style={{ right: isOpen ? '0' : '-280px' }}
         >
             {/* Toggle Button (Gear Icon) */}
-            <div
+            <button
                 onClick={toggleSwitcher}
                 className="absolute left-[-48px] top-0 w-12 h-12 bg-bg-card text-skin flex items-center justify-center cursor-pointer rounded-l-xl shadow-strong hover:bg-skin hover:text-white transition-all"
                 aria-label="Toggle theme switcher"
+                type="button"
             >
                 <Palette size={24} />
-            </div>
+            </button>
 
             {/* Panel */}
             <div className="bg-bg-card w-[280px] p-6 rounded-l-2xl shadow-strong border-l-4 border-skin">
