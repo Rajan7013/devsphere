@@ -1,26 +1,118 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* stylelint-disable-next-line at-rule-no-unknown */
+@theme {
+  --color-skin: var(--skin-color);
+  --color-bg-main: var(--bg-main);
+  --color-bg-card: var(--bg-card);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+@layer utilities {
+  .hero-glow {
+    background: radial-gradient(circle,
+        color-mix(in srgb, var(--skin-color) 7%, transparent),
+        transparent 70%);
+  }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  .hero-shadow {
+    box-shadow:
+      0 0 0 8px color-mix(in srgb, var(--skin-color) 6%, transparent),
+      0 10px 28px color-mix(in srgb, var(--skin-color) 10%, transparent);
   }
 }
 
+/* CSS Variables for Theme System */
+:root {
+  /* Light Mode (Clean & Minimal) - SWAPPED */
+  --bg-main: #ffffff;
+  /* Pure white background */
+  --bg-card: #f5f5f7;
+  /* Very light grey cards */
+  --text-main: #1d1d1f;
+  /* Near black for headings */
+  --text-muted: #5a5a5f;
+  /* Darker grey for better contrast (WCAG AA) */
+
+  /* Default Skin Color (Red) - Darkened for better contrast */
+  --skin-color: #d91639;
+}
+
+.dark {
+  /* Dark Mode (Keep existing dark theme) */
+  --bg-main: #151515;
+  --bg-card: #222222;
+  --text-main: #ffffff;
+  --text-muted: #a0a0a0;
+}
+
+/* Global Styles */
+* {
+  box-sizing: border-box;
+}
+
+html,
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  overflow-x: hidden;
+  max-width: 100%;
+  background-color: var(--bg-main);
+  color: var(--text-main);
+}
+
+body {
+  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-space-grotesk), sans-serif;
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .shadow-soft {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  }
+
+  .shadow-strong {
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  .dark .shadow-soft {
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+  }
+
+  .dark .shadow-strong {
+    box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-card);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--skin-color);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--skin-color);
+  opacity: 0.8;
+}
+
+/* Text Selection */
+::selection {
+  background-color: var(--skin-color);
+  color: white;
 }
