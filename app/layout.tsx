@@ -99,7 +99,7 @@ export const metadata: Metadata = {
 
   // VERIFICATION: Add your verification codes
   verification: {
-    google: 'AY90lB7dMlkUgRVSknFvJvMQioD4rC5FbSC9ypn1KG0',
+    google: '39Uk7SyWWSHflx02-6UUBub3JFHJ7SmIEgwLeuVpiOY',
     // yandex: 'your-yandex-code',
     // bing: 'your-bing-code',
   },
