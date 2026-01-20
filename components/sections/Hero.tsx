@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <section
             aria-labelledby="hero-heading"
-            className="relative w-full min-h-screen flex items-center py-16 lg:py-20 bg-bg-main overflow-hidden"
+            className="relative w-full flex items-center py-12 pb-0 lg:py-16 lg:pb-0 bg-bg-main overflow-hidden"
         >
             <div className="max-w-[1200px] mx-auto px-6 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">
@@ -78,8 +78,8 @@ export default function Hero() {
                         </div>
 
                         {/* Founder Attribution */}
-                        <div className="-mt-3">
-                            <p className="text-[12px] text-text-muted border-t border-text-muted/10 pt-3">
+                        <div className="-mt-5">
+                            <p className="text-[12px] text-text-muted pt-3">
                                 Founded by <span className="font-semibold text-text-main">Rajan Prasaila Yadav</span> — Full-Stack Architect
                             </p>
                         </div>
