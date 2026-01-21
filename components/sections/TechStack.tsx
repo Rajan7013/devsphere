@@ -36,6 +36,7 @@ export default function TechStack() {
                 { name: 'Docker', logo: '/technology logo/docker.svg' },
                 { name: 'Vercel', logo: '/technology logo/vercel.svg' },
                 { name: 'Cloudflare', logo: '/technology logo/cloudflare.svg' },
+                { name: 'Google Cloud', logo: '/technology logo/google-cloud-3.svg' },
                 { name: 'Git', logo: '/technology logo/git.svg' },
                 { name: 'GitHub', logo: '/technology logo/github.svg' },
             ],
@@ -49,26 +50,25 @@ export default function TechStack() {
                 { name: 'DeepSeek', logo: '/technology logo/deepseek.svg' },
                 { name: 'Figma', logo: '/technology logo/figma.svg' },
                 { name: 'Canva', logo: '/technology logo/canva.svg' },
+                { name: 'Google Maps', logo: '/technology logo/google-maps-2020-icon.svg' },
             ],
         },
         {
             category: 'Analytics & SEO',
             technologies: [
+                { name: 'Google', logo: '/technology logo/google.svg' },
+                { name: 'Google Scholar', logo: '/technology logo/google-scholar.svg' },
                 { name: 'Google Analytics', logo: '/technology logo/google-analytics.svg' },
                 { name: 'Search Console', logo: '/technology logo/google-search-console.svg' },
                 { name: 'Semrush', logo: '/technology logo/Semrush.svg' },
-            ],
-        },
-        {
-            category: 'Authentication',
-            technologies: [
-                { name: 'Clerk', logo: '/technology logo/Clerk.svg' },
+                { name: 'My Business', logo: '/technology logo/google-my-business-logo.svg' },
+                { name: 'Power BI', logo: '/technology logo/power-bi.svg' },
             ],
         },
     ];
 
     return (
-        <section className="py-16 md:py-24 bg-bg-main border-t-2 border-b-2 border-text-muted/50">
+        <section className="pt-4 pb-4 md:pt-6 md:pb-8 bg-bg-main border-t-2 border-b-2 border-text-muted/50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-h2-mobile md:text-h2-desktop font-heading font-bold mb-4 leading-heading tracking-heading">

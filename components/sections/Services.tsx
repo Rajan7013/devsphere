@@ -36,7 +36,7 @@ export default function Services() {
     ];
 
     return (
-        <section className="pt-4 pb-16 md:pt-6 md:pb-24 border-t-2 border-b-2 border-text-muted/50">
+        <section className="pt-4 pb-4 md:pt-6 md:pb-6 border-t-2 border-b-2 border-text-muted/50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-h2-mobile md:text-h2-desktop font-heading font-bold mb-4 leading-heading tracking-heading">

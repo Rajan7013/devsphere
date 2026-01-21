@@ -1,6 +1,6 @@
 export default function Founder() {
     return (
-        <section className="py-16 md:py-24 bg-bg-card border-t-2 border-b-2 border-text-muted/50">
+        <section className="pt-16 pb-4 md:pt-24 md:pb-8 bg-bg-card border-t-2 border-b-2 border-text-muted/50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                     {/* Founder Image */}

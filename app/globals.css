@@ -1,46 +1,23 @@
 @import "tailwindcss";
 
-/* stylelint-disable-next-line at-rule-no-unknown */
-@theme {
-  --color-skin: var(--skin-color);
-  --color-bg-main: var(--bg-main);
-  --color-bg-card: var(--bg-card);
-  --color-text-main: var(--text-main);
-  --color-text-muted: var(--text-muted);
-}
-
-@layer utilities {
-  .hero-glow {
-    background: radial-gradient(circle,
-        color-mix(in srgb, var(--skin-color) 7%, transparent),
-        transparent 70%);
-  }
-
-  .hero-shadow {
-    box-shadow:
-      0 0 0 8px color-mix(in srgb, var(--skin-color) 6%, transparent),
-      0 10px 28px color-mix(in srgb, var(--skin-color) 10%, transparent);
-  }
-}
-
 /* CSS Variables for Theme System */
 :root {
-  /* Light Mode (Clean & Minimal) - SWAPPED */
+  /* Colors */
   --bg-main: #ffffff;
-  /* Pure white background */
   --bg-card: #f5f5f7;
-  /* Very light grey cards */
   --text-main: #1d1d1f;
-  /* Near black for headings */
   --text-muted: #5a5a5f;
-  /* Darker grey for better contrast (WCAG AA) */
 
-  /* Default Skin Color (Red) - Darkened for better contrast */
+  /* Skin Color (Default Red) */
   --skin-color: #d91639;
+
+  /* Fonts */
+  /* Note: --font-poppins is injected by next/font in layout.tsx */
+  --font-heading: var(--font-poppins), sans-serif;
+  --font-body: var(--font-poppins), sans-serif;
 }
 
 .dark {
-  /* Dark Mode (Keep existing dark theme) */
   --bg-main: #151515;
   --bg-card: #222222;
   --text-main: #ffffff;
@@ -61,7 +38,7 @@ body {
 }
 
 body {
-  font-family: var(--font-inter), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-body);
 }
 
 h1,
@@ -70,11 +47,51 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-space-grotesk), sans-serif;
+  font-family: var(--font-heading);
 }
 
-/* Custom Utilities */
+/* Custom Utilities - Explicit fallbacks for skin color to bypass Tailwind config issues */
 @layer utilities {
+  .text-skin {
+    color: var(--skin-color) !important;
+  }
+
+  .bg-skin {
+    background-color: var(--skin-color) !important;
+  }
+
+  .border-skin {
+    border-color: var(--skin-color) !important;
+  }
+
+  .from-skin\/10 {
+    --tw-gradient-from: color-mix(in srgb, var(--skin-color) 10%, transparent);
+    background-color: var(--tw-gradient-from);
+    /* Fallback */
+  }
+
+  .to-skin\/5 {
+    --tw-gradient-to: color-mix(in srgb, var(--skin-color) 5%, transparent);
+  }
+
+  .shadow-skin-glow {
+    box-shadow: 0 0 20px color-mix(in srgb, var(--skin-color) 30%, transparent);
+  }
+
+  /* Hero Specifics */
+  .hero-glow {
+    background: radial-gradient(circle,
+        color-mix(in srgb, var(--skin-color) 7%, transparent),
+        transparent 70%);
+  }
+
+  .hero-shadow {
+    box-shadow:
+      0 0 0 8px color-mix(in srgb, var(--skin-color) 6%, transparent),
+      0 10px 28px color-mix(in srgb, var(--skin-color) 10%, transparent);
+  }
+
+  /* Shadows */
   .shadow-soft {
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
   }
@@ -90,9 +107,19 @@ h6 {
   .dark .shadow-strong {
     box-shadow: 0 8px 30px rgba(255, 255, 255, 0.1);
   }
+
+  /* Scrollbar Hide Utility */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
 
-/* Scrollbar Styling */
+/* Standard Scrollbar Styling for other elements */
 ::-webkit-scrollbar {
   width: 10px;
 }
