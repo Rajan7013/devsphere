@@ -6,7 +6,7 @@ export default function Hero() {
     return (
         <section
             aria-labelledby="hero-heading"
-            className="relative w-full flex items-center py-12 pb-0 lg:py-16 lg:pb-0 bg-bg-main overflow-hidden"
+            className="relative w-full flex items-center py-12 pb-0 lg:py-16 lg:pb-0 bg-bg-main overflow-hidden border-b-2 border-text-muted/50"
         >
             <div className="max-w-[1200px] mx-auto px-6 w-full">
                 <div className="grid grid-cols-1 lg:grid-cols-[55%_45%] gap-12 items-center">

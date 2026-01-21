@@ -26,7 +26,7 @@ export default function Projects() {
     ];
 
     return (
-        <section className="py-16 md:py-24 bg-bg-card">
+        <section className="py-16 md:py-24 bg-bg-card border-t-2 border-b-2 border-text-muted/50">
             <div className="max-w-7xl mx-auto px-6">
                 <div className="text-center mb-12">
                     <h2 className="text-h2-mobile md:text-h2-desktop font-heading font-bold mb-4 leading-heading tracking-heading">
