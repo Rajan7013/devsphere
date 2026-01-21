@@ -1,21 +1,14 @@
 import type { Metadata, Viewport } from 'next';
-import { Space_Grotesk, Inter } from 'next/font/google';
+import { Poppins } from 'next/font/google';
 import Script from 'next/script'; // Import Script for JSON-LD
 import './globals.css';
 
 // 1. FONTS: Preloading with 'swap' for 0 Cumulative Layout Shift (CLS)
-const spaceGrotesk = Space_Grotesk({
+const poppins = Poppins({
   subsets: ['latin'],
-  weight: ['500', '600', '700'], // Added 500 for more heading options
+  weight: ['400', '500', '600', '700'], // Comprehensive weights for all uses
   display: 'swap',
-  variable: '--font-space-grotesk',
-});
-
-const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '500', '600', '700'], // Added 700 for bold body text
-  display: 'swap',
-  variable: '--font-inter',
+  variable: '--font-poppins',
 });
 
 // 2. VIEWPORT: Explicit mobile optimization for 100% Mobile Score
@@ -241,17 +234,10 @@ export default function RootLayout({
       areaServed: 'Worldwide',
       availableLanguage: ['English'],
     },
-
-    // Aggregate Rating (add when you have reviews)
-    // aggregateRating: {
-    //   '@type': 'AggregateRating',
-    //   ratingValue: '5.0',
-    //   reviewCount: '50',
-    // },
   };
 
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${poppins.variable}`} suppressHydrationWarning>
       <head>
         {/* Preload hero image for faster LCP */}
         <link

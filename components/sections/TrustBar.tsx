@@ -47,7 +47,7 @@ export default function TrustBar() {
                     {clients.map((client, index) => (
                         <div
                             key={index}
-                            className={`flex justify-center items-center bg-bg-card rounded-lg p-3 md:p-4 shadow-soft hover:shadow-strong transition-all hover:-translate-y-1 flex-shrink-0 ${client.hideOnMobile ? 'hidden md:flex' : ''
+                            className={`flex justify-center items-center bg-bg-card rounded-lg p-3 md:p-4 shadow-soft hover:shadow-strong transition-all hover:-translate-y-1 shrink-0 ${client.hideOnMobile ? 'hidden md:flex' : ''
                                 }`}
                         >
                             <Image

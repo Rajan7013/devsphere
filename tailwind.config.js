@@ -16,8 +16,8 @@ module.exports = {
         'text-muted': 'var(--text-muted)',
       },
       fontFamily: {
-        heading: ['var(--font-space-grotesk)', 'sans-serif'],
-        body: ['var(--font-inter)', 'sans-serif'],
+        heading: ['var(--font-poppins)', 'sans-serif'],
+        body: ['var(--font-poppins)', 'sans-serif'],
       },
       fontSize: {
         // Headings - Design System Tokens
